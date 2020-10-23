@@ -1,4 +1,4 @@
-package com.revature.lastdayproject;
+package com.revature.timeinwords;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
