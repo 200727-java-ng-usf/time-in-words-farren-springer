@@ -25,6 +25,13 @@ public class EventService {
 
 
     // TODO save method
+    /**
+     * CREATE operation
+     */
+    @Transactional
+    public void save(Event event) {
+        eventRepository.save(event);
+    }
 
     /**
      * getall method: Returns a list of all the appUser objects in the database.
@@ -128,7 +135,7 @@ public class EventService {
     /**
      * MVP timeInWords method: takes in minte and hour, returns string of time
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public String timeInWords(int h, int m) {
 
         String hourWord;
