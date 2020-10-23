@@ -21,6 +21,13 @@ public class EventController {
     }
 
     // TODO save operation
+    /**
+     * SAVE operation
+     */
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public void save(@RequestBody Event event) {
+        eventService.save(event);
+    }
 
     /**
      * READ operations
@@ -72,7 +79,11 @@ public class EventController {
 
     @GetMapping(value = "/timeinwordscustom/hour/{hour}/minute/{minute}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String timeInWordsCustom(@PathVariable int hour, @PathVariable int minute) {
+
+        System.out.println(eventService.timeInWords(hour, minute));
+
         return eventService.timeInWords(hour, minute);
+
     }
 
 
