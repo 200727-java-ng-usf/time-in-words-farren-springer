@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-boot-poc
+  h2:
+    console:
+      enabled: true
+      path: /h2
+    datasource:
+    url: jdbc:postgresql://java-ng-usf-200727.czcb2bh9usg6.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=last-day-project
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: Yellow507!
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# .properties file version of the above .yml configuration
+#-------------------------------------------------------------
+# spring.application.name=spring-boot-poc
+# spring.h2.console.enabled=true
+# spring.h2.console.path=/h2
+# spring.datasource.url=jdbc:h2:mem:testdb
+# spring.datasource.driver-class-name:org.H2.Driver
+# spring.datasource.username=sa
+# spring.datasource.password=password
+# spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+# spring.jpa.show-sql=true
+# spring.jpa.hibernate.ddl-auto=create
