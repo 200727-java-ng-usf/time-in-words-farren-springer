@@ -2,7 +2,7 @@ package com.revature.timeinwords.services;
 
 import com.revature.timeinwords.dtos.EventDto;
 import com.revature.timeinwords.entities.Event;
-import com.revature.timeinwords.exceptions.EventRepository;
+import com.revature.timeinwords.repositories.EventRepository;
 import com.revature.timeinwords.exceptions.InvalidRequestException;
 import com.revature.timeinwords.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
