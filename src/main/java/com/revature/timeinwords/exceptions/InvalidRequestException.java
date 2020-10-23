@@ -1,4 +1,4 @@
-package com.revature.lastdayproject.exceptions;
+package com.revature.timeinwords.exceptions;
 
 public class InvalidRequestException extends RuntimeException {
 
