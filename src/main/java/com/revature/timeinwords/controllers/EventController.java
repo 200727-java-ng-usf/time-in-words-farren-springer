@@ -11,30 +11,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/events")
-public class AppUserController {
+public class EventController {
 
     @Autowired
     private EventService eventService;
 
-    public AppUserController(EventService eventService) {
+    public EventController(EventService eventService) {
         this.eventService = eventService;
     }
 
-    /**
-     * CREATE operations
-     */
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Event save(@RequestBody EventDto eventDto) {
+    // TODO save operation
 
-        if (eventDto == null) {
-
-            throw new InvalidRequestException("Event cannot be null!");
-
-        }
-
-        return eventService.save(eventDto);
-
-    }
     /**
      * READ operations
      */
@@ -46,7 +33,7 @@ public class AppUserController {
     }
 
     @GetMapping(value = "/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public EventDto getEventById(@PathVariable int id) {
+    public Event getEventById(@PathVariable int id) {
 
         if (id <= 0) {
 
@@ -54,9 +41,9 @@ public class AppUserController {
 
         }
 
-        EventDto eventDto =  eventService.getEventById(id);
+        Event event =  eventService.getEventById(id);
 
-        return eventDto;
+        return event;
     }
 
     @GetMapping(value = "/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -73,5 +60,15 @@ public class AppUserController {
         return eventDto;
 
     }
+
+    @GetMapping(value = "/timeinwords/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String timeInWords(@PathVariable int id) { // TODO event or eventDto? See how frontend works
+        Event event = eventService.getEventById(id);
+        int h = event.getH();
+        int m = event.getM();
+        return eventService.timeInWords(h, m);
+
+    }
+
 
 }
