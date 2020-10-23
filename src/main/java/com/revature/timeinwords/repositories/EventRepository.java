@@ -1,4 +1,4 @@
-package com.revature.timeinwords.exceptions;
+package com.revature.timeinwords.repositories;
 
 import com.revature.timeinwords.entities.Event;
 import org.springframework.data.repository.CrudRepository;
