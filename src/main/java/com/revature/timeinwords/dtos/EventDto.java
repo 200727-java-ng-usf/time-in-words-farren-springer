@@ -1,10 +1,16 @@
 package com.revature.timeinwords.dtos;
 
 import com.revature.timeinwords.entities.Event;
+import com.revature.timeinwords.repositories.EventRepository;
+import com.revature.timeinwords.services.EventService;
 
 import java.util.Objects;
 
 public class EventDto {
+
+    private EventRepository eventRepository;
+
+    EventService eventService = new EventService(eventRepository);
 
     private int id;
     private String name;
@@ -41,7 +47,8 @@ public class EventDto {
         this.date = event.getDate();
         // TODO implement hackerrank function to take in an event and return an eventDTO with
         // TODO word representations of the hours and minutes
-        this.hourWord = "not implemented yet";
+        String timeWord = eventService.timeInWords(event.getH(), event.getM());
+        this.hourWord = timeWord;
         this.minuteWord = "not implemented yet";
     }
 
