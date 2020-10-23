@@ -1,18 +1,30 @@
-package com.revature.lastdayproject.repositories;
+package com.revature.timeinwords.exceptions;
 
+import com.revature.timeinwords.entities.Event;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 
 @Repository
-public interface AppUserRepository extends CrudRepository<com.revature.lastdayproject.entities.Event, Integer> {
+public interface EventRepository extends CrudRepository<Event, Integer> {
 
-    /**
-     * findAppUserById method: The id parameter is passed as the input.
-     * A user is returned when the input id matches a database record.
-     * @param id user id int
-     * @return user with matching id int
-     */
-    com.revature.lastdayproject.entities.Event findAppUserById(int id);
+
+    // CREATE
+    Event save(Event event);
+
+    // READ
+    Event findById(int id);
+
+    Event findByName(String name);
+
+    List<Event> findAll();
+
+    // UPDATE
+
+
+    // DELETE
 
 }
