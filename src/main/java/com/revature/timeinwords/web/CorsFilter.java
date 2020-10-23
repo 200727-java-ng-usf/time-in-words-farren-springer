@@ -1,4 +1,4 @@
-package com.revature.lastdayproject.web;
+package com.revature.timeinwords.web;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
