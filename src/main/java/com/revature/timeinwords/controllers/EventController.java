@@ -70,5 +70,10 @@ public class EventController {
 
     }
 
+    @GetMapping(value = "/timeinwordscustom/hour/{hour}/minute/{minute}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String timeInWordsCustom(@PathVariable int hour, @PathVariable int minute) {
+        return eventService.timeInWords(hour, minute);
+    }
+
 
 }
